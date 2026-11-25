@@ -3,12 +3,13 @@ import os
 import tempfile
 import unittest
 from cloud_drift.cli import handle_diff, handle_import, handle_remediate
+_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 class TestCLI(unittest.TestCase):
     def setUp(self):
-        self.decl_path = "/home/emprogue/Projects/cloud-drift/examples/declared_state.json"
-        self.live_path = "/home/emprogue/Projects/cloud-drift/examples/live_cloud_state.json"
+        self.decl_path = os.path.join(_ROOT, "examples", "declared_state.json")
+        self.live_path = os.path.join(_ROOT, "examples", "live_cloud_state.json")
 
     def test_cli_diff(self):
         with tempfile.NamedTemporaryFile(delete=False, suffix=".json") as f_json:

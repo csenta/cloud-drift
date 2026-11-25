@@ -2,12 +2,14 @@ import unittest
 from cloud_drift.core.models import DriftType
 from cloud_drift.core.state_parser import StateParser
 from cloud_drift.engines.compliance import ComplianceEngine
+import os
+_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 class TestComplianceEngine(unittest.TestCase):
     def test_security_degradations(self):
-        decl_path = "/home/emprogue/Projects/cloud-drift/examples/declared_state.json"
-        live_path = "/home/emprogue/Projects/cloud-drift/examples/live_cloud_state.json"
+        decl_path = os.path.join(_ROOT, "examples", "declared_state.json")
+        live_path = os.path.join(_ROOT, "examples", "live_cloud_state.json")
 
         declared = StateParser.parse_declared_state(decl_path)
         live = StateParser.parse_live_state(live_path)

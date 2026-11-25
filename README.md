@@ -1,8 +1,10 @@
 # CloudDrift ☁️
 
+> **Status:** prototype. A personal security-research project, not a production product. Expect rough edges; issues and pull requests are welcome.
+
 > **Autonomous Multi-Cloud IaC Drift & Security Compliance Remediator for Terraform/OpenTofu**
 
-CloudDrift is an enterprise-grade Infrastructure-as-Code (IaC) drift detection and security remediation platform. It continuously reconciles declared Terraform / OpenTofu state definitions against observed live multi-cloud environments (AWS, Azure, GCP), identifying unmanaged shadow infrastructure, configuration attribute drift, and out-of-band security degradations (e.g. open ingress rules, unencrypted storage, missing public access blocks, and wildcard IAM permissions).
+CloudDrift is a prototype Infrastructure-as-Code (IaC) drift detection and security remediation platform. It continuously reconciles declared Terraform / OpenTofu state definitions against observed live multi-cloud environments (AWS, Azure, GCP), identifying unmanaged shadow infrastructure, configuration attribute drift, and out-of-band security degradations (e.g. open ingress rules, unencrypted storage, missing public access blocks, and wildcard IAM permissions).
 
 ---
 
@@ -106,3 +108,7 @@ Run with Docker Compose:
 ```bash
 docker-compose up --build
 ```
+
+## License
+
+MIT. See [LICENSE](LICENSE).
